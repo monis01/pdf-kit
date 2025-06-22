@@ -4,6 +4,8 @@ import React, { useState, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PDFService from './services/PDFService'; // Real PDF processing
 import { PDFDocument } from 'pdf-lib'; // For splitting functionality
+import PDFMerger from "./components/tools/PDFMerger";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 // ======================================= SPLIT PDF FILE CODE COMMENTED ==============================================================
@@ -857,10 +859,10 @@ import { PDFDocument } from 'pdf-lib'; // For splitting functionality
 
 function App() {
   return (
-    <Router>
+    <Router basename="/pdf-kit">
       <Routes>
         {/* <Route path="/" element={<SplitPDF />} /> */}
-        <Route path="/merge-pdf" element={<MergePDF />} />
+        <Route path="/merge-pdf" element={<PDFMerger />} />
       </Routes>
     </Router>
   );
