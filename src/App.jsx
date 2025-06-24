@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PDFService from './services/PDFService'; // Real PDF processing
 import { PDFDocument } from 'pdf-lib'; // For splitting functionality
 import PDFMerger from "./components/tools/PDFMerger";
+import PDFSplitter from "./components/tools/PDFSplitter";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
@@ -861,7 +862,7 @@ function App() {
   return (
     <Router basename="/pdf-kit">
       <Routes>
-        {/* <Route path="/" element={<SplitPDF />} /> */}
+        <Route path="/split-pdf" element={<PDFSplitter />} />
         <Route path="/merge-pdf" element={<PDFMerger />} />
       </Routes>
     </Router>
