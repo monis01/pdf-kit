@@ -4,11 +4,13 @@
     <meta charset="utf-8" />
     <title>Redirecting...</title>
     <script>
-      // Redirect only on GitHub Pages
-       const path = location.pathname.replace('/pdf-kit', '');
-      const search = location.search;
-      const hash = location.hash;
-      location.replace('/pdf-kit/?redirect=' + encodeURIComponent(path + search + hash));
+      // Only do this on GitHub Pages
+      if (location.hostname.includes("github.io")) {
+        // Extract full path after /pdf-kit
+        const redirectPath = location.pathname.replace('/pdf-kit', '') + location.search + location.hash;
+        const newUrl = '/pdf-kit/?redirect=' + encodeURIComponent(redirectPath);
+        location.replace(newUrl);
+      }
     </script>
   </head>
   <body>
