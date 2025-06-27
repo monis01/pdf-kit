@@ -6,6 +6,11 @@
     <!-- <meta http-equiv="refresh" content="0; URL='/pdf-kit/'" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+     <script>
+      // Redirect any 404 back to root of SPA
+      const redirectUrl = window.location.origin + "/pdf-kit/";
+      window.location.replace(redirectUrl);
+    </script>
     <script type="module" crossorigin src="/pdf-kit/assets/index-KKazQmL9.js"></script>
     <link rel="stylesheet" crossorigin href="/pdf-kit/assets/index-DSwk_XBZ.css">
   </head>
