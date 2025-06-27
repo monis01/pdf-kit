@@ -5,9 +5,10 @@
     <title>Redirecting...</title>
     <script>
       // Redirect only on GitHub Pages
-      if (location.hostname.includes("github.io")) {
-        location.replace("/pdf-kit/");
-      }
+       const path = location.pathname.replace('/pdf-kit', '');
+      const search = location.search;
+      const hash = location.hash;
+      location.replace('/pdf-kit/?redirect=' + encodeURIComponent(path + search + hash));
     </script>
   </head>
   <body>
